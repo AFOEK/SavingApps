@@ -42,8 +42,13 @@ namespace SavingApp
             cmd.Parameters.AddWithValue("@val3", Program.login.username);
             Program.database.Open();
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Succesfully added", "Success BOI !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Program.database.Close();
+            if (MessageBox.Show("Succesfully added", "Success BOI !!", MessageBoxButtons.OK, MessageBoxIcon.Information)==DialogResult.OK)
+            {
+                this.Hide();
+                Program.to_Do.Show();
+            }
+            
         }
         private void signin_frm_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -1,6 +1,6 @@
 ﻿namespace SavingApp
 {
-    partial class About_frm
+    partial class CrystalReport_frm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,14 +44,14 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // About_frm
+            // CrystalReport_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "About_frm";
-            this.Text = "About";
+            this.Name = "CrystalReport_frm";
+            this.Text = "CrystalReport";
             this.Load += new System.EventHandler(this.About_frm_Load);
             this.ResumeLayout(false);
 

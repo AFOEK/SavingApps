@@ -29,7 +29,8 @@ namespace SavingApp
         {
             string query = "SELECT info, status FROM todo_list WHERE status='In Progress' and username='" + Program.login.username + "';";
             Program.database.Open();
-            cmd.Connection = Program.database;
+
+            cmd= Program.database.CreateCommand();
             cmd.CommandText = query;
             da = new SqlDataAdapter();
             da.SelectCommand = cmd;

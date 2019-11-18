@@ -26,8 +26,8 @@ namespace SavingApp
         private void submit_button_Click(object sender, EventArgs e)
         {
 
-            string syntax_income = "INSERT INTO expenses (date_due,info,income,outcome,username) VALUES (@val1,@val2,@val3,@val4,@val5)';";
-            string syntax_outcome = "INSERT INTO expenses (date_due,info,outcome,income,username) VALUES (@val1,@val2,@val3,@val4,@val5)';";
+            string syntax_income = "INSERT INTO expenses (date_due,info,income,outcome,username) VALUES (@val1,@val2,@val3,@val4,@val5);";
+            string syntax_outcome = "INSERT INTO expenses (date_due,info,outcome,income,username) VALUES (@val1,@val2,@val3,@val4,@val5);";
             cmd = new SqlCommand();
             cmd.Connection = Program.database;
             if (radio_income.Checked == true)
@@ -40,8 +40,14 @@ namespace SavingApp
                 cmd.Parameters.AddWithValue("@val5", Program.login.username);
                 Program.database.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Succesfully add", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Program.database.Close();
+                if(MessageBox.Show("Succesfully add", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)==DialogResult.OK)
+                {
+                    this.Hide();
+                    Program.expenses.Show();
+                }
+                
+                //add new list view reset load
             }
             if (radio_outcome.Checked == true)
             {
@@ -53,8 +59,12 @@ namespace SavingApp
                 cmd.Parameters.AddWithValue("@val5", Program.login.username);
                 Program.database.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Succesfully add", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Program.database.Close();
+                if (MessageBox.Show("Succesfully add", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    this.Hide();
+                    Program.expenses.Show();
+                }
             }
 
 

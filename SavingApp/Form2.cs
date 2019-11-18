@@ -13,9 +13,12 @@ namespace SavingApp
 {
     public partial class main_frm : Form
     {
-        static SqlDataReader dr;
         static SqlDataAdapter da;
+        static SqlDataAdapter da2;
+        static SqlDataAdapter da3;
         static DataTable dt;
+        static DataTable dt2;
+        static DataTable dt3;
         static SqlCommand cmd;
         static SqlCommand cmd1;
         static SqlCommand cmd2;
@@ -36,21 +39,32 @@ namespace SavingApp
             cmd = new SqlCommand(syntax, Program.database);
             cmd1 = new SqlCommand(syntax2, Program.database);
             cmd2 = new SqlCommand(syntax3, Program.database);
-            dr = cmd.ExecuteReader();
-            dr = cmd1.ExecuteReader();
-            while (dr.Read())
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            DataRow dr;
+            for(int i=0;i<dt.Rows.Count;i++)
             {
+                dr = dt.Rows[i];
                 lbl_outcome.Text = dr["outmax"].ToString();
                 lbl_income.Text = dr["inmax"].ToString();
-                lbl_todo1.Text = dr["infodone"].ToString();
-            }    
-            dr.Close();
-            dr = cmd2.ExecuteReader();
-            while(dr.Read())
+            }
+            da2 = new SqlDataAdapter(cmd1);
+            dt2 = new DataTable();
+            da2.Fill(dt2);
+            for(int i=0;i<dt.Rows.Count;i++)
             {
+                dr = dt2.Rows[i];
+                lbl_todo1.Text = dr["infodone"].ToString();
+            }
+            da3 = new SqlDataAdapter(cmd2);
+            dt3 = new DataTable();
+            da3.Fill(dt3);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dr = dt3.Rows[i];
                 lbl_todo2.Text = dr["infoinprogress"].ToString();
             }
-            dr.Close();
             Program.database.Close();
         }
         private void progress_button_Click(object sender, EventArgs e)

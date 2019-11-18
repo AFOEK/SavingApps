@@ -38,7 +38,7 @@ namespace SavingApp
             string nilai = "0";
             try
             {
-                database = database = new SqlConnection(
+                database = new SqlConnection(
                 @"Data Source=TOÅSTMALÖNEROG;
                 Initial Catalog=SavingApps;
                 Integrated Security=SSPI;");
@@ -51,6 +51,7 @@ namespace SavingApp
                     nilai = dr["target"].ToString();
                 }
                 progressBar1.Maximum = int.Parse(nilai);
+                timer.Start();
             }
             catch (Exception ex)
             {
@@ -61,6 +62,16 @@ namespace SavingApp
         private void progressBar1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (progressBar1.Value < progressBar1.Maximum)
+            {
+                progressBar1.Value++;
+                label1.Left = progressBar1.Value;
+            }
+            else timer.Stop();
         }
     }
 }

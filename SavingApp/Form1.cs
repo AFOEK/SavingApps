@@ -44,11 +44,7 @@ namespace SavingApp
             da = new SqlDataAdapter(syntax, Program.database);
             dt = new DataTable();
             da.Fill(dt);
-            if (dt.Rows.Count == 1)
-            {
-                this.Hide();
-                Program.main.Show();
-            }
+
             username = txt_id.Text;
             string syntax2 = "SELECT nama_user FROM login_database WHERE username='" + username + "'";
             cmd = new SqlCommand(syntax2, Program.database);
@@ -58,6 +54,13 @@ namespace SavingApp
                 Program.main.lbl_nama.Text = dr["nama_user"].ToString();
             }
             dr.Close();
+
+            if (dt.Rows.Count == 1)
+            {
+                this.Hide();
+                Program.database.Close();
+                Program.main.Show();
+            }
             Program.database.Close();
         }
 
@@ -81,7 +84,7 @@ namespace SavingApp
             if(e.KeyChar==112)
             {
                 this.Hide();
-                Program.about.Show();
+                //Program.about.Show();
             }
         }
     }

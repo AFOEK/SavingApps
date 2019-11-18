@@ -21,7 +21,7 @@ namespace SavingApp
         public static Add_todo_list add_Todo;
         public static progress_frm progress;
         public static expenses_frm expenses;
-        public static About_frm about;
+        public static CrystalReport_frm Crystal;
         public static SqlConnection database;
 
         [STAThread]
@@ -29,7 +29,7 @@ namespace SavingApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SqlConnection database = new SqlConnection(
+            database = new SqlConnection(
             @"Data Source=TOÅSTMALÖNEROG;
             Initial Catalog=SavingApps;
             Integrated Security=SSPI;");
@@ -40,12 +40,12 @@ namespace SavingApp
             add_Todo = new Add_todo_list();
             progress = new progress_frm();
             expenses = new expenses_frm();
-            about = new About_frm();
+            Crystal = new CrystalReport_frm();
             login = new login_frm();
             //Application.Run(new login_frm());
             //Application.Run(new About_frm());
             //test git
-            //Application.Run(new login_frm());
+            Application.Run(login);
         }
     }
 }

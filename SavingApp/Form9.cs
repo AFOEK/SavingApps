@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SavingApp
 {
-    public partial class About_frm : Form
+    public partial class CrystalReport_frm : Form
     {
-        public About_frm()
+        public CrystalReport_frm()
         {
             InitializeComponent();
         }

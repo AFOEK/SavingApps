@@ -14,7 +14,6 @@ D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.progress_frm.resources
 D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.expenses_frm.resources
 D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.Add_todo_list.resources
 D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.to_do_frm.resources
-D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.About_frm.resources
 D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\CrystalDecisions.ReportSource.dll
 D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\CrystalDecisions.Shared.dll
@@ -35,3 +34,4 @@ D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\ShockwaveFlashObjects.dll
 D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\stdole.dll
 D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.csproj.CopyComplete
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.CrystalReport_frm.resources
