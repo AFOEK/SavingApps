@@ -1,0 +1,17 @@
+D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\SavingApp.exe.config
+D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\SavingApp.exe
+D:\C# PROJECT\SavingApp\SavingApp\bin\Debug\SavingApp.pdb
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.csprojAssemblyReference.cache
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.login_frm.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.main_frm.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.signin_frm.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.Properties.Resources.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.csproj.GenerateResource.cache
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.exe
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.pdb
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.add_expensesfrm.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.progress_frm.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.expenses_frm.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.Add_todo_list.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.to_do_frm.resources
+D:\C# PROJECT\SavingApp\SavingApp\obj\Debug\SavingApp.About_frm.resources
