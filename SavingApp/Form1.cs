@@ -81,11 +81,7 @@ namespace SavingApp
 
         private void login_frm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar==112)
-            {
-                this.Hide();
-                //Program.about.Show();
-            }
+         
         }
     }
 }

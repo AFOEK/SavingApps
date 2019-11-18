@@ -43,11 +43,12 @@ namespace SavingApp
                 Program.database.Close();
                 if(MessageBox.Show("Succesfully add", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)==DialogResult.OK)
                 {
+                    Program.expenses.listView1.Items.Clear();
+                    Program.expenses.loaddata();
+                    Program.database.Close();
                     this.Hide();
                     Program.expenses.Show();
-                }
-                
-                //add new list view reset load
+                }  
             }
             if (radio_outcome.Checked == true)
             {
@@ -62,12 +63,13 @@ namespace SavingApp
                 Program.database.Close();
                 if (MessageBox.Show("Succesfully add", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
+                    Program.expenses.listView1.Items.Clear();
+                    Program.expenses.loaddata();
+                    Program.database.Close();
                     this.Hide();
                     Program.expenses.Show();
                 }
             }
-
-
         }
 
         private void add_expensesfrm_Load(object sender, EventArgs e)

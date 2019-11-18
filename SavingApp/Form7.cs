@@ -13,7 +13,6 @@ namespace SavingApp
 {
     public partial class progress_frm : Form
     {
-        static SqlConnection database;
         static SqlDataReader dr;
         static SqlDataAdapter da;
         static DataTable dt;
@@ -36,29 +35,17 @@ namespace SavingApp
         private void progress_frm_Load(object sender, EventArgs e)
         {
             string nilai = "0";
-            try
+            string syntax = "SELECT target FROM login_database where username='" + Program.login.username + "';";
+            Program.database.Open();
+            cmd = new SqlCommand(syntax,Program.database);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                database = new SqlConnection(
-                @"Data Source=TOÅSTMALÖNEROG;
-                Initial Catalog=SavingApps;
-                Integrated Security=SSPI;");
-                string syntax = "SELECT target FROM login_database where username='" + Program.login.username + "';";
-                database.Open();
-                cmd = new SqlCommand();
-                dr = cmd.ExecuteReader();
-                while(dr.Read())
-                {
-                    nilai = dr["target"].ToString();
-                }
-                progressBar1.Maximum = int.Parse(nilai);
-                timer.Start();
+                nilai = dr["target"].ToString();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            progressBar1.Maximum = int.Parse(nilai);
+            timer.Start();
         }
-
         private void progressBar1_Click(object sender, EventArgs e)
         {
             

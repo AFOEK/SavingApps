@@ -86,7 +86,7 @@
             this.Login_butt.ForeColor = System.Drawing.Color.Transparent;
             this.Login_butt.Location = new System.Drawing.Point(783, 593);
             this.Login_butt.Name = "Login_butt";
-            this.Login_butt.Size = new System.Drawing.Size(135, 54);
+            this.Login_butt.Size = new System.Drawing.Size(141, 54);
             this.Login_butt.TabIndex = 6;
             this.Login_butt.UseVisualStyleBackColor = false;
             this.Login_butt.Click += new System.EventHandler(this.Login_butt_Click);

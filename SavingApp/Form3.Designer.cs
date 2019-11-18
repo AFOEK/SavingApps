@@ -90,10 +90,11 @@
             // signin_button
             // 
             this.signin_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("signin_button.BackgroundImage")));
+            this.signin_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.signin_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.signin_button.Location = new System.Drawing.Point(790, 675);
+            this.signin_button.Location = new System.Drawing.Point(790, 678);
             this.signin_button.Name = "signin_button";
-            this.signin_button.Size = new System.Drawing.Size(132, 50);
+            this.signin_button.Size = new System.Drawing.Size(138, 58);
             this.signin_button.TabIndex = 11;
             this.signin_button.UseVisualStyleBackColor = true;
             this.signin_button.Click += new System.EventHandler(this.signin_button_Click);

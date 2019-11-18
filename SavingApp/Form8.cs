@@ -13,7 +13,6 @@ namespace SavingApp
 {
     public partial class expenses_frm : Form
     {
-        static SqlConnection database;
         static SqlDataAdapter da;
         static SqlDataReader dr;
         static DataTable dt;
@@ -24,38 +23,27 @@ namespace SavingApp
             InitializeComponent();
             listView1.FullRowSelect = true;
         }
-        void loaddata()
+        public void loaddata()
         {
-            try
+            string syntax = "SELECT * FROM expenses where username='" + Program.login.username + "';";
+            Program.database.Open();
+            cmd = new SqlCommand();
+            cmd.Connection = Program.database;
+            cmd.CommandText = syntax;
+            da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            dt = new DataTable();
+            da.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                database = new SqlConnection(
-                @"Data Source=TOÅSTMALÖNEROG;
-                Initial Catalog=SavingApps;
-                Integrated Security=SSPI;");
-                string syntax = "SELECT * FROM expenses where username='" + Program.login.username + "';";
-                database.Open();
-                cmd = new SqlCommand();
-                cmd.Connection = database;
-                cmd.CommandText = syntax;
-                da = new SqlDataAdapter();
-                da.SelectCommand = cmd;
-                dt = new DataTable();
-                da.Fill(dt);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    DataRow dr = dt.Rows[i];
-                    ListViewItem lt = new ListViewItem(dr["date_due"].ToString());
-                    lt.SubItems.Add(dr["info"].ToString());
-                    lt.SubItems.Add(dr["income"].ToString());
-                    lt.SubItems.Add(dr["outcome"].ToString());
-                    listView1.Items.Add(lt);
-                }
+                DataRow dr = dt.Rows[i];
+                ListViewItem lt = new ListViewItem(dr["date_due"].ToString());
+                lt.SubItems.Add(dr["info"].ToString());
+                lt.SubItems.Add(dr["income"].ToString());
+                lt.SubItems.Add(dr["outcome"].ToString());
+                listView1.Items.Add(lt);
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            Program.database.Close();
         }
 
         private void expenses_frm_FormClosing(object sender, FormClosingEventArgs e)
@@ -70,7 +58,7 @@ namespace SavingApp
         private void button5_Click(object sender, EventArgs e)
         {
             add_expensesfrm add = new add_expensesfrm();
-            this.Show();
+            this.Hide();
             add.Show();
         }
 
