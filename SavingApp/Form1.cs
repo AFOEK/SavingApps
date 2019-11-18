@@ -23,7 +23,7 @@ namespace SavingApp
 
         public login_frm()
         {
-             
+            InitializeComponent();
         }
 
         private void login_frm_Load(object sender, EventArgs e)
