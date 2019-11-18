@@ -37,6 +37,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbl_total = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -99,18 +100,30 @@
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lbl_total
+            // 
+            this.lbl_total.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_total.Font = new System.Drawing.Font("Aileron Heavy", 24F, System.Drawing.FontStyle.Bold);
+            this.lbl_total.ForeColor = System.Drawing.Color.White;
+            this.lbl_total.Location = new System.Drawing.Point(590, 68);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(100, 41);
+            this.lbl_total.TabIndex = 13;
+            // 
             // progress_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1675, 839);
+            this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "progress_frm";
             this.Text = "Progress";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.progress_frm_FormClosing);
@@ -128,5 +141,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_total;
     }
 }

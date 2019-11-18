@@ -112,6 +112,7 @@
             this.Controls.Add(this.target_txt);
             this.Controls.Add(this.pass_txt);
             this.Controls.Add(this.username_txt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "signin_frm";
             this.Text = "Sign In";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.signin_frm_FormClosing);

@@ -177,6 +177,7 @@
             this.Controls.Add(this.expenses_button);
             this.Controls.Add(this.progress_button);
             this.Controls.Add(this.dashboard_button);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "to_do_frm";
             this.Text = "To-Do List";
             this.Load += new System.EventHandler(this.to_do_frm_Load);
