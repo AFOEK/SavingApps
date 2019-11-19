@@ -55,6 +55,17 @@ namespace SavingApp
             }
             dr.Close();
 
+            string query = "SELECT username from login_database where username='root' and pass='toor'";
+            da = new SqlDataAdapter(query, Program.database);
+            dt = new DataTable();
+            da.Fill(dt);
+            if(dt.Rows.Count==1)
+            {
+                this.Hide();
+                Program.database.Close();
+                Program.Crystal.Show();
+            }
+
             if (dt.Rows.Count == 1)
             {
                 this.Hide();

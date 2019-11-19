@@ -113,7 +113,7 @@
             this.lbl_total.BackColor = System.Drawing.Color.Transparent;
             this.lbl_total.Font = new System.Drawing.Font("Aileron Heavy", 24F, System.Drawing.FontStyle.Bold);
             this.lbl_total.ForeColor = System.Drawing.Color.White;
-            this.lbl_total.Location = new System.Drawing.Point(590, 68);
+            this.lbl_total.Location = new System.Drawing.Point(849, 57);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(100, 41);
             this.lbl_total.TabIndex = 13;
