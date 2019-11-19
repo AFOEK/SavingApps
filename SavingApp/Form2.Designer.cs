@@ -99,9 +99,9 @@
             // lbl_expenses
             // 
             this.lbl_expenses.Image = ((System.Drawing.Image)(resources.GetObject("lbl_expenses.Image")));
-            this.lbl_expenses.Location = new System.Drawing.Point(347, 139);
+            this.lbl_expenses.Location = new System.Drawing.Point(347, 135);
             this.lbl_expenses.Name = "lbl_expenses";
-            this.lbl_expenses.Size = new System.Drawing.Size(620, 336);
+            this.lbl_expenses.Size = new System.Drawing.Size(957, 336);
             this.lbl_expenses.TabIndex = 5;
             this.lbl_expenses.Click += new System.EventHandler(this.lbl_expenses_Click);
             // 
@@ -112,7 +112,7 @@
             this.lbl_todo1.Image = ((System.Drawing.Image)(resources.GetObject("lbl_todo1.Image")));
             this.lbl_todo1.Location = new System.Drawing.Point(345, 516);
             this.lbl_todo1.Name = "lbl_todo1";
-            this.lbl_todo1.Size = new System.Drawing.Size(290, 263);
+            this.lbl_todo1.Size = new System.Drawing.Size(459, 263);
             this.lbl_todo1.TabIndex = 6;
             this.lbl_todo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_todo1.Click += new System.EventHandler(this.lbl_todo1_Click);
@@ -122,9 +122,9 @@
             this.lbl_todo2.Font = new System.Drawing.Font("Aileron Heavy", 15F);
             this.lbl_todo2.ForeColor = System.Drawing.Color.White;
             this.lbl_todo2.Image = ((System.Drawing.Image)(resources.GetObject("lbl_todo2.Image")));
-            this.lbl_todo2.Location = new System.Drawing.Point(648, 516);
+            this.lbl_todo2.Location = new System.Drawing.Point(827, 516);
             this.lbl_todo2.Name = "lbl_todo2";
-            this.lbl_todo2.Size = new System.Drawing.Size(310, 263);
+            this.lbl_todo2.Size = new System.Drawing.Size(477, 263);
             this.lbl_todo2.TabIndex = 7;
             this.lbl_todo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_todo2.Click += new System.EventHandler(this.lbl_todo2_Click);
@@ -134,9 +134,9 @@
             this.lbl_income.BackColor = System.Drawing.Color.Transparent;
             this.lbl_income.Font = new System.Drawing.Font("Aileron Heavy", 30F);
             this.lbl_income.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_income.Location = new System.Drawing.Point(409, 291);
+            this.lbl_income.Location = new System.Drawing.Point(387, 279);
             this.lbl_income.Name = "lbl_income";
-            this.lbl_income.Size = new System.Drawing.Size(207, 110);
+            this.lbl_income.Size = new System.Drawing.Size(397, 110);
             this.lbl_income.TabIndex = 8;
             this.lbl_income.Text = "-";
             this.lbl_income.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,9 +147,9 @@
             this.lbl_outcome.BackColor = System.Drawing.Color.Transparent;
             this.lbl_outcome.Font = new System.Drawing.Font("Aileron Heavy", 30F);
             this.lbl_outcome.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_outcome.Location = new System.Drawing.Point(705, 291);
+            this.lbl_outcome.Location = new System.Drawing.Point(867, 279);
             this.lbl_outcome.Name = "lbl_outcome";
-            this.lbl_outcome.Size = new System.Drawing.Size(211, 110);
+            this.lbl_outcome.Size = new System.Drawing.Size(415, 110);
             this.lbl_outcome.TabIndex = 9;
             this.lbl_outcome.Text = "-";
             this.lbl_outcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

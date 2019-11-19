@@ -36,7 +36,7 @@ namespace SavingApp
                 cmd.Parameters.AddWithValue("@val3", amount_txt.Text);
                 cmd.Parameters.AddWithValue("@val2", info_txt.Text);
                 cmd.Parameters.AddWithValue("@val1", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@val4", DBNull.Value);
+                cmd.Parameters.AddWithValue("@val4", 0);
                 cmd.Parameters.AddWithValue("@val5", Program.login.username);
                 Program.database.Open();
                 cmd.ExecuteNonQuery();
@@ -56,7 +56,7 @@ namespace SavingApp
                 cmd.Parameters.AddWithValue("@val3", amount_txt.Text);
                 cmd.Parameters.AddWithValue("@val2", info_txt.Text);
                 cmd.Parameters.AddWithValue("@val1", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@val4", DBNull.Value);
+                cmd.Parameters.AddWithValue("@val4", 0);
                 cmd.Parameters.AddWithValue("@val5", Program.login.username);
                 Program.database.Open();
                 cmd.ExecuteNonQuery();

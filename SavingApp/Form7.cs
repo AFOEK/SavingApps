@@ -13,10 +13,15 @@ namespace SavingApp
 {
     public partial class progress_frm : Form
     {
+        static SqlDataReader dr0;
         static SqlDataReader dr;
+        static SqlDataReader dr1;
         static SqlDataAdapter da;
         static DataTable dt;
+        static DataTable dt2;
+        static SqlDataAdapter da2;
         static SqlCommand cmd;
+        static SqlCommand cmd2;
         private static bool _exiting;
         public progress_frm()
         {
@@ -24,24 +29,45 @@ namespace SavingApp
         }
         public void loaddata()
         {
-            string hasil1="0", hasil2="0";
-            int hasiltot;
+            string nilai = "0";
+            string syntax0 = "SELECT target FROM login_database where username='" + Program.login.username + "';";
             Program.database.Open();
-            string syntax = "select sum(income)as hasil1,sum(outcome)as hasil2 from expenses where username='"+Program.main.lbl_nama+"'";
-            da = new SqlDataAdapter(syntax, Program.database);
-            dt = new DataTable();
-            da.Fill(dt);
-            DataRow dr;
-            for(int i=0;i<dt.Rows.Count;i++)
+            cmd = new SqlCommand(syntax0, Program.database);
+            dr0 = cmd.ExecuteReader();
+            while (dr0.Read())
             {
-                dr = dt.Rows[i];
-                hasil1 = dr["hasil1"].ToString();
-                hasil2 = dr["hasil2"].ToString();
+                nilai = dr0["target"].ToString();
             }
-            //repair this error
-            hasiltot = int.Parse(hasil1) - int.Parse(hasil2);
-            lbl_total.Text = hasiltot.ToString();
+            progressBar1.Maximum = int.Parse(nilai);
+            timer.Start();
+            dr0.Close();
             Program.database.Close();
+
+            string income="0", outcome="0";
+            int hasiltot=0;
+            Program.database.Open();
+            string syntax = "select SUM(income) from expenses where username='"+Program.main.lbl_nama.Text+"'";
+            cmd = new SqlCommand(syntax,Program.database);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                income = dr[0].ToString();
+            }
+            cmd.Dispose();
+            dr.Close();
+            string syntax2 = "select SUM(outcome) from expenses where username='" + Program.main.lbl_nama.Text + "'";
+            cmd2 = new SqlCommand(syntax2, Program.database);
+            dr1 = cmd.ExecuteReader();
+            while (dr1.Read())
+            {
+                outcome = dr1[0].ToString();
+            }
+            dr1.Close();
+            Program.database.Close();
+
+            hasiltot = int.Parse(income) - int.Parse(outcome);
+            progressBar1.Value = hasiltot;
+            lbl_total.Text = hasiltot.ToString();
         }
         private void progress_frm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -53,20 +79,7 @@ namespace SavingApp
         }
 
         private void progress_frm_Load(object sender, EventArgs e)
-        {
-            string nilai = "0";
-            string syntax = "SELECT target FROM login_database where username='" + Program.login.username + "';";
-            Program.database.Open();
-            cmd = new SqlCommand(syntax,Program.database);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                nilai = dr["target"].ToString();
-            }
-            progressBar1.Maximum = int.Parse(nilai);
-            timer.Start();
-            dr.Close();
-            Program.database.Close();
+        {     
             loaddata();
         }
         private void progressBar1_Click(object sender, EventArgs e)
@@ -80,8 +93,12 @@ namespace SavingApp
             {
                 progressBar1.Value++;
                 label1.Left = progressBar1.Value;
+                progressBar1.Step++;
             }
-            else timer.Stop();
+            else
+            {
+                timer.Stop();
+            }
         }
     }
 }
