@@ -68,6 +68,7 @@ namespace SavingApp
             hasiltot = int.Parse(income) - int.Parse(outcome);
             progressBar1.Value = hasiltot;
             lbl_total.Text = hasiltot.ToString();
+           
         }
         private void progress_frm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -91,14 +92,43 @@ namespace SavingApp
         {
             if (progressBar1.Value < progressBar1.Maximum)
             {
-                progressBar1.Value++;
+                progressBar1.Value+=5;
                 label1.Left = progressBar1.Value;
-                progressBar1.Step++;
+
+                //for (int i = 0; i <= progressBar1.Value; i++)
+                //{
+                //    progressBar1.PerformStep();
+                //    label1.Left = progressBar1.Value;
+                //}
             }
             else
             {
                 timer.Stop();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.main.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.progress.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.expenses.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.to_Do.Show();
         }
     }
 }

@@ -152,6 +152,7 @@
             this.Controls.Add(this.radio_outcome);
             this.Controls.Add(this.radio_income);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "add_expensesfrm";
             this.Text = "Add your expenses";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_expensesfrm_FormClosing);

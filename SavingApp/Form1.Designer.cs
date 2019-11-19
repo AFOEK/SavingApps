@@ -107,6 +107,7 @@
             this.Font = new System.Drawing.Font("Aileron Heavy", 24F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(11, 9, 11, 9);
+            this.MaximizeBox = false;
             this.Name = "login_frm";
             this.Text = "Log In";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.login_frm_FormClosing);

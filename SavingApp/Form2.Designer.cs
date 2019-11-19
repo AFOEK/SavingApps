@@ -183,6 +183,7 @@
             this.Controls.Add(this.dashboard_button);
             this.Font = new System.Drawing.Font("Aileron Heavy", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "main_frm";
             this.Text = "Main Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.main_frm_FormClosing);
