@@ -39,6 +39,7 @@ namespace SavingApp
                 nilai = dr0["target"].ToString();
             }
             progressBar1.Maximum = int.Parse(nilai);
+            progressBar1.Minimum = 0;
             timer.Start();
             dr0.Close();
             Program.database.Close();
@@ -68,7 +69,9 @@ namespace SavingApp
             hasiltot = int.Parse(income) - int.Parse(outcome);
             progressBar1.Value = hasiltot;
             lbl_total.Text = hasiltot.ToString();
-           
+            progressBar1.Value = progressBar1.Minimum;
+            label1.Left = 0;
+            timer.Enabled = true;
         }
         private void progress_frm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -92,14 +95,8 @@ namespace SavingApp
         {
             if (progressBar1.Value < progressBar1.Maximum)
             {
-                progressBar1.Value+=5;
+                progressBar1.Value ++;
                 label1.Left = progressBar1.Value;
-
-                //for (int i = 0; i <= progressBar1.Value; i++)
-                //{
-                //    progressBar1.PerformStep();
-                //    label1.Left = progressBar1.Value;
-                //}
             }
             else
             {
